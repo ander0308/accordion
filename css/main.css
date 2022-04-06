@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.container .accordion {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color .3s;
+}
+
+.container .accordion:hover{
+  background-color: #e9ecef;
+}
+
+.container .accordion.active{
+  background-color: #dee2e6;
+}
+
+.container .accordion .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.container .accordion .title h3 {
+  font-size: 1.2rem;
+}
+
+.container .accordion .title .icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+}
+
+.container .accordion .title .icon img {
+  transition: transform .3s;
+}
+
+.container .accordion.active .title .icon img {
+  transform: rotate(180deg);
+}
+
+.container .accordion p {
+  margin-top: 1rem;
+  padding-right: 1rem;
+  line-height: 160%;
+  display: none;
+}
+
+.container .accordion.active p {
+  display: block;
+  animation: fade .3s forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
